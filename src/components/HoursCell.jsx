@@ -1,8 +1,13 @@
 
-const HoursCell = ({isEditing, value}) => {
+const HoursCell = ({isEditing, value, onValueChange}) => {
   return isEditing ? (
     <td>
-        <input type="text" value={value} placeholder="Hours"/> 
+        <input 
+            type="number" 
+            onChange={(e) => onValueChange(e.target.value)}
+            value={value}
+            placeholder="Hours"
+        /> 
     </td>
   ):(
     <td>{value}</td>
